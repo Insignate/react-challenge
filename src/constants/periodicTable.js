@@ -1,3 +1,4 @@
+//all the periodic table elements symbol
 export const periodicTableSymbols = [
     'He', 'Li', 'Be', 'Ne', 
     'Na', 'Mg', 'Al', 'Si', 'Cl', 'Ar', 'Ca', 'Sc', 'Ti', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 

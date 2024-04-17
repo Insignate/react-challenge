@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { ActionTypes } from '../constants/actionTypes'
 import periodifyWord from '../simulateApi/periodifyWord'
 
+//using createAsyncThunk to "simulate" a call to an api (in this case to a promise) to search the periodic table elements in the first and last name
 export const producePeriodicElements = createAsyncThunk('name', async ({firstName, lastName}) => {
     try{
         const response = await periodifyWord(firstName, lastName)
@@ -12,6 +13,7 @@ export const producePeriodicElements = createAsyncThunk('name', async ({firstNam
     }
 })
 
+//initial state for the app variables
 const initialState = {
     firstName: '',
     lastName: '',
@@ -20,6 +22,11 @@ const initialState = {
     loading: false,
 }
 
+/*reducers to control variables on first name and last name 
+when the user presses a button to get the periodic table element
+there will be extra reducer cases to show what is currently
+happening to the application
+*/
 export const nameResolver = createSlice({
     name: ActionTypes.SET_NAMES,
     initialState,
@@ -40,10 +47,10 @@ export const nameResolver = createSlice({
                 state.lastNameElement = action.payload.lastWordMatch
                 state.loading = false
             })
-            .addCase(producePeriodicElements.pending, (state, action) => {
+            .addCase(producePeriodicElements.pending, (state) => {
                 state.loading = true
             })
-            .addCase(producePeriodicElements.rejected, (state, action) => {
+            .addCase(producePeriodicElements.rejected, (state) => {
                 state.loading = false
             })
     }

@@ -1,5 +1,6 @@
 import { periodicTableSymbols } from "../constants/periodicTable"
 
+//"simulate" an api call to return the periodic table from the first and last name 
 export const periodifyWord = function (firstName, lastName) {
     return new Promise((resolve, reject) => {
         try {
@@ -15,6 +16,7 @@ export const periodifyWord = function (firstName, lastName) {
     })
 }
 
+//search and find the periodic table word
 const matchPeriodicTableWord = word => {
     for (let i = 0; i < periodicTableSymbols.length; i++){
         if (word.includes(periodicTableSymbols[i])){

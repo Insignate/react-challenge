@@ -4,6 +4,8 @@ import { producePeriodicElements, setFirstName, setLastName } from './redux/appP
 import LoadingButton from './components/LoadingButton';
 import { useCallback } from 'react';
 
+
+// App startup function
 function App() {
   const dispatch = useDispatch()
   const firstName = useSelector(state => state.names.firstName)
@@ -12,12 +14,14 @@ function App() {
   const lastNameElement = useSelector(state => state.names.lastNameElement)
   const loading = useSelector(state => state.names.loading)
 
+  //Submit form to get periodic table elements
   const breakifyUserWord = useCallback(async e => {
     e.preventDefault()
     if (!loading)
       dispatch(producePeriodicElements({firstName, lastName}))
   }, [dispatch, firstName, lastName, loading])
 
+  //and display all user interface for this app 
   return (
     <form className={`main-breakify-word ${loading ? 'lock-submit' : ''}`} onSubmit={e => breakifyUserWord(e)}>
       <div>
