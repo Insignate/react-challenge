@@ -1,0 +1,67 @@
+input, button{
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+input{
+  background-color: var(--input-background);
+}
+button{
+  background: var(--green-tone);
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 5em;
+}
+h1 > span{
+  padding: 0 2px;
+  margin: 0 2px;
+}
+
+.lock-submit{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.lock-button{
+  pointer-events: none;
+}
+.btn-breakify-word{
+  width: 100%;
+  margin-top: 6px;
+}
+.main-breakify-word{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  transition: .3s;
+}
+
+.break-first-last-name{
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+.break-first-last-name > div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+/*
+periodic table elements
+*/
+
+.H, .He, .Li, .Be, .B, .C, .N, .O, .F, .Ne, .Na, .Mg, .Al, .Si, .P, 
+.S, .Cl, .Ar, .K, .Ca, .Sc, .Ti, .V, .Cr, .Mn, .Fe, .Co, .Ni, .Cu, .Zn, 
+.Ga, .Ge, .As, .Se, .Br, .Kr, .Rb, .Sr, .Y, .Zr, .Nb, .Mo, .Tc, .Ru, 
+.Rh, .Pd, .Ag, .Cd, .In, .Sn, .Sb, .Te, .I, .Xe, .Cs, .Ba, .La, .Ce, 
+.Pr, .Nd, .Pm, .Sm, .Eu, .Gd, .Tb, .Dy, .Ho, .Er, .Tm, .Yb, .Lu, .Hf, 
+.Ta, .W, .Re, .Os, .Ir, .Pt, .Au, .Hg, .Tl, .Pb, .Bi, .Po, .At, .Rn, .Fr, 
+.Ra, .Ac, .Th, .Pa, .U, .Np {
+  background-color: var(--green-tone);
+}
